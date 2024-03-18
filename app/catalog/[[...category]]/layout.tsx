@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="flex-grow overflow-y-auto">{children}</div>
       <div className="flex py-4 w-full items-center justify-center border-t shadow-2xl dark:bg-black bg-white">
-        <Pagination totalPages={100} />
+        <Pagination totalPages={50} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const getPageUrl = (
   startIndex: number,
   maxResults: number
 ) =>
-  `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyBBcrdfswVgRLZhUeizPBVsQcu2Kno_QKs`;
+  `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}&key=${process.env.API_KEY}`;
 
 export async function fetchBooks(
   searchTerm: string,
@@ -20,7 +20,8 @@ export async function fetchBooks(
       axios<Volumes>(getPageUrl(searchTerm, firstStartIndex, 25)),
       axios<Volumes>(getPageUrl(searchTerm, secondStartIndex, 25)),
     ]);
-    const items = firstData.items.concat(secondData.items);
+
+    const items = (firstData.items || []).concat(secondData.items || []);
     return { ...secondData, items };
   } else {
     const startIndex = (currentPage - 1) * pageSize;
