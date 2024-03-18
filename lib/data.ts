@@ -6,7 +6,7 @@ const getPageUrl = (
   startIndex: number,
   maxResults: number
 ) =>
-  `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}&key=${process.env.API_KEY}`;
+  `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}`;
 
 export async function fetchBooks(
   searchTerm: string,
