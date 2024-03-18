@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: ["books.google.com"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "books.google.com",
+      },
+    ],
   },
 };
 
