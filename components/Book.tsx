@@ -15,18 +15,20 @@ const Book = ({ title, imageLinks }: BookData["volumeInfo"]) => {
   const imageUrl: string =
     getFirstAvailableLink(imageLinks || {}) || "/no-cover.png";
   return (
-    <div className="relative border border-gray-200">
+    <div className="relative flex flex-col justify-between cursor-pointer">
       <Image
         src={imageUrl}
         alt={`${title} cover image`}
-        width="0"
-        height="0"
-        sizes="100vw"
-        className="h-[160px] w-full object-contain"
+        width="200"
+        height="300"
+        className="object-contain"
         placeholder="blur"
         blurDataURL="/image-placeholder.png"
       />
-      <p className="line-clamp-2 border-t border-gray-200 p-1" title={title}>
+      <p
+        className="h-12 line-clamp-2 p-1 hover:text-blue-800 hover:underline"
+        title={title}
+      >
         {title}
       </p>
     </div>

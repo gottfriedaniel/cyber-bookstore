@@ -36,7 +36,7 @@ export default async function Page({ params, searchParams }: PageParams) {
 
   return (
     <Suspense key={category + currentPage} fallback={<CardsSkeleton />}>
-      <div className="xs:grid-cols-1 grid gap-2 xs:px-4 md:px-16 xs:py-4 md:py-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="xs:grid-cols-2 grid gap-4 xs:px-4 md:px-16 xs:py-4 md:py-8 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
         {items.map(({ id, volumeInfo }) => (
           <Book key={id} {...volumeInfo} />
         ))}
