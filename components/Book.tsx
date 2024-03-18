@@ -21,7 +21,7 @@ const Book = ({ title, imageLinks }: BookData["volumeInfo"]) => {
         alt={`${title} cover image`}
         width="200"
         height="300"
-        className="object-contain"
+        className="h-[300px] w-full object-contain"
         placeholder="blur"
         blurDataURL="/image-placeholder.png"
       />
