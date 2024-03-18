@@ -25,7 +25,7 @@ export default function Categories() {
         <li
           key={category}
           className={clsx(
-            "flex w-full flex-1 items-center justify-center whitespace-nowrap py-2 text-center after:h-4 after:border-r after:last:border-r-0",
+            "flex w-full flex-1 items-center justify-center whitespace-nowrap py-2 text-center after:h-4 after:border-r after:last:border-r-0 hover:bg-blue-600 hover:text-white",
             {
               "bg-blue-600 text-white": currentCategory === category,
             }

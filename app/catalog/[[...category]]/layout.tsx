@@ -13,14 +13,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </h1>
           <Search placeholder="Search books..." />
         </div>
-        <div className="mt-4">
+        <section className="mt-4">
           <Categories />
-        </div>
+        </section>
       </div>
-      <div className="flex-grow overflow-y-auto">{children}</div>
-      <div className="flex py-4 w-full items-center justify-center border-t shadow-2xl dark:bg-black bg-white">
+      <main className="flex-grow overflow-y-auto">{children}</main>
+      <section className="flex py-4 w-full items-center justify-center border-t shadow-2xl dark:bg-black bg-white">
         <Pagination totalPages={50} />
-      </div>
+      </section>
     </div>
   );
 }
