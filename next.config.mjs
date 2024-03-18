@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // trailingSlash: true,
   images: {
-    domains: ["books.google.com"],
+    remotePatterns: ["books.google.com"],
   },
 };
 
