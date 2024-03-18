@@ -1,5 +1,4 @@
 import Categories from "@/components/Categories";
-
 import { lusitana } from "@/lib/fonts";
 import Pagination from "@/components/Pagination";
 import Search from "@/components/Search";
