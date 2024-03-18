@@ -1,7 +1,5 @@
-import { Book as BookData, ImageLinks } from '@/app/types/Book';
-import Image from 'next/image';
-import { useState } from 'react';
-import { ImageSkelaton } from '../skeletons';
+import { Book as BookData, ImageLinks } from "@/types/book";
+import Image from "next/image";
 
 function getFirstAvailableLink(links: ImageLinks): string | null {
   const linkEntries = Object.entries(links);
@@ -13,9 +11,9 @@ function getFirstAvailableLink(links: ImageLinks): string | null {
   return null;
 }
 
-const Book = ({ title, imageLinks }: BookData['volumeInfo']) => {
+const Book = ({ title, imageLinks }: BookData["volumeInfo"]) => {
   const imageUrl: string =
-    getFirstAvailableLink(imageLinks || {}) || '/no-cover.png';
+    getFirstAvailableLink(imageLinks || {}) || "/no-cover.png";
   return (
     <div className="relative border border-gray-200">
       <Image
@@ -28,7 +26,6 @@ const Book = ({ title, imageLinks }: BookData['volumeInfo']) => {
         placeholder="blur"
         blurDataURL="/image-placeholder.png"
       />
-      {/* {!loaded && <ImageSkelaton />} */}
       <p className="line-clamp-2 border-t border-gray-200 p-1" title={title}>
         {title}
       </p>
